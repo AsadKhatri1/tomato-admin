@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Add = () => {
-  const url = "https://tomato-server-dg1r.onrender.com";
+  const url = "http://localhost:4000";
 
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
