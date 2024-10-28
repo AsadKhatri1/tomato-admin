@@ -4,11 +4,12 @@ import axios from "axios";
 import { assets } from "../../assets/assets";
 
 const Orders = () => {
+  const url = "http://localhost:4000";
   const [data, setData] = useState([]);
 
   const fetchllOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/order/list");
+      const res = await axios.get(`${url}/api/order/list`);
       if (res.data.success) {
         setData(res.data.data);
       } else {
@@ -20,7 +21,7 @@ const Orders = () => {
   };
 
   const statusHandler = async (event, orderId) => {
-    const res = await axios.post("http://localhost:4000/api/order/update", {
+    const res = await axios.post(`${url}/api/order/update`, {
       orderId,
       status: event.target.value,
     });
